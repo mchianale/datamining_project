@@ -1,0 +1,9 @@
+{
+    "films": "CREATE TABLE IF NOT EXISTS films ( id BIGINT PRIMARY KEY, url TEXT NOT NULL, titre TEXT NOT NULL, synopsis TEXT NOT NULL, public TEXT DEFAULT NULL, note_presse FLOAT DEFAULT NULL, nb_notes_presse INT DEFAULT NULL, nb_critiques_presse INT DEFAULT NULL, note_spectateurs FLOAT DEFAULT NULL, nb_notes_spectateurs INT DEFAULT NULL, nb_critiques_spectateurs INT DEFAULT NULL, date TEXT DEFAULT NULL, duree INT DEFAULT NULL, distributeur TEXT DEFAULT NULL, recompenses INT DEFAULT 0, type TEXT DEFAULT NULL, box_office_france BIGINT DEFAULT NULL, langues TEXT DEFAULT NULL, couleur TEXT DEFAULT NULL, nationalite TEXT DEFAULT NULL )",
+    "realisateurs": "CREATE TABLE IF NOT EXISTS realisateurs (realisateur VARCHAR(100) NOT NULL, id_film BIGINT NOT NULL, PRIMARY KEY (realisateur, id_film), FOREIGN KEY (id_film) REFERENCES films(id) )",
+    "acteurs": "CREATE TABLE IF NOT EXISTS acteurs ( acteur VARCHAR(100) NOT NULL, id_film BIGINT NOT NULL, role TEXT DEFAULT NULL, PRIMARY KEY (acteur, id_film), FOREIGN KEY (id_film) REFERENCES films(id) )",
+    "scenaristes": "CREATE TABLE IF NOT EXISTS scenaristes (scenariste VARCHAR(100) NOT NULL, id_film BIGINT NOT NULL, PRIMARY KEY (scenariste, id_film), FOREIGN KEY (id_film) REFERENCES films(id) )",
+    "categories": "CREATE TABLE IF NOT EXISTS categories ( categorie VARCHAR(100) NOT NULL, id_film BIGINT NOT NULL, PRIMARY KEY (categorie, id_film), FOREIGN KEY (id_film) REFERENCES films(id) )",
+    "tags": "CREATE TABLE IF NOT EXISTS tags ( tag VARCHAR(100) NOT NULL, id_film BIGINT NOT NULL, PRIMARY KEY (tag, id_film), FOREIGN KEY (id_film) REFERENCES films(id) )",
+    "critiques": "CREATE TABLE IF NOT EXISTS critiques ( id BIGINT AUTO_INCREMENT PRIMARY KEY, id_film BIGINT NOT NULL, auteur VARCHAR(50), date VARCHAR(10), note FLOAT CHECK (note BETWEEN 0 AND 5),  contenu TEXT, likes INT, dislikes INT, FOREIGN KEY (id_film) REFERENCES films(id) )"
+}
