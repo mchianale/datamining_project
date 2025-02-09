@@ -1,11 +1,4 @@
-Pour lancer mysql 
-```bash
-docker-compose up --build -d
-```
-
-populate la db => populate_db/populate.py regarder le .env pour changer les parametres 
-sinon les données que j ai deja scrappe dans dataset
-
+# Introduction
 # Récupération des données
 
 ## Scraping des données depuis Allociné
@@ -94,3 +87,22 @@ Exemple de requête :
 ```
 
 L'API repose sur une classe `MySQLManager` qui assure la connexion à la base de données et l'exécution sécurisée des requêtes.
+
+## Reproduction en locale du projet 
+**1. Lancer l'API et la base de donnée:**
+Exécuter la commande suivante pour démarrer l’API FastAPI ainsi que la base de données MySQL via Docker :
+```bash
+docker-compose up --build -d
+```
+
+**2. Configuration des paramètres pour scrapper `allo-ciné`:**
+Dans le dossier `populate_db`, modifier le fichier `.env` en fonction des données souhaitées.
+
+**3. Lancer la population de la base de données:**
+Une fois les paramètres configurés, exécuter le script suivant pour récupérer les données et les insérer dans la base MySQL :
+```bash
+python populate_db/populate.py
+```
+
+**SQL to CSV :** Pour récupérer les données en `.csv` voir `sql_to_csv.ipynb`.
+
