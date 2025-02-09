@@ -50,3 +50,47 @@ Les données sont stockées dans plusieurs tables :
 - **scenaristes** : regroupe les scénaristes ayant participé aux films
 - **categories** : indique les genres associés aux films
 - **tags** : permet de stocker les tags associés aux films
+
+## Intéraction avec la base de données 
+L’API, développée avec `FastAPI` (voir `app`), permet d'interagir avec la base de données MySQL et d'effectuer des requêtes dynamiques. Elle est constituée de plusieurs endpoints permettant de vérifier son état, d’effectuer des requêtes SQL libres et d’exécuter des requêtes d'insertion ou de mise à jour.
+
+**Endpoints disponibles :**
+
+### 1. Vérification du statut de l'API
+- Méthode : `GET`
+- URL : `/health_check`
+- Description : Vérifie que l’API fonctionne correctement.
+
+Exemple de réponse :
+```json
+{
+"status": "success",
+"message": "Health check."
+}
+```
+
+### 2. Exécution de requêtes SQL de lecture
+- Méthode : `POST`
+- URL : `/query`
+- Description : Permet d'exécuter une requête SQL et de récupérer le résultat.
+
+Exemple de requête :
+```json
+{
+"sql_query": "SELECT * FROM films WHERE annee >= 2020;"
+}
+```
+
+### 3. Exécution de requêtes SQL d'écriture
+- Méthode : `POST`
+- URL : `/execution`
+- Description : Permet d'exécuter une requête SQL de modification (insertion, mise à jour, suppression).
+
+Exemple de requête :
+```json
+{
+"sql_query": "INSERT INTO critiques (film_id, critique, note) VALUES (1, 'Très bon film', 4.5);"
+}
+```
+
+L'API repose sur une classe `MySQLManager` qui assure la connexion à la base de données et l'exécution sécurisée des requêtes.
