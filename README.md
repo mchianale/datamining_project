@@ -1,4 +1,9 @@
 # Introduction
+# Nos données
+- Environ 14 000 critiques de films ont été récupérées depuis `Allociné`.
+- Les films sélectionnés sont ceux catégorisés entre **2020** et **2025** sur `Allociné` (ce qui ne correspond pas nécessairement à leur date de sortie).
+- Voir `dataset`, (**Le séparateur utilisait pour les fichiers `.csv` est `~`)
+  
 # Récupération des données
 
 ## Scraping des données depuis Allociné
