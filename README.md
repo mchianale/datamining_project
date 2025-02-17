@@ -111,3 +111,9 @@ python populate_db/populate.py
 
 **SQL to CSV :** Pour récupérer les données en `.csv` voir `sql_to_csv.ipynb`.
 
+
+
+# posotiif / negatif => split train test stratify
+# TODO TF-IDF, CAMEMBERT
+# TODO evaluation 
+# TODO use case (reddit / list de film)
