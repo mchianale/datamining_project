@@ -3,3 +3,6 @@ populate_db/__pycache__/scrapper.cpython-310.pyc
 models/tf-idf/best_clf.pickle
 models/tf-idf/tf_idf.pickle
 models/tf-idf/tfidf_times.pickle
+models/camembert/camembert_times.pickle
+models/camembert/config.json
+models/camembert/model.safetensors

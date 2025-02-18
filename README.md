@@ -117,3 +117,28 @@ python populate_db/populate.py
 # TODO TF-IDF, CAMEMBERT
 # TODO evaluation 
 # TODO use case (reddit / list de film)
+
+# readme 
+- tf-idf
+- camembert
+
+# pres
+Sentiment Analisys 
+- preprocessing / document reduction
+- split train test val
+
+Tf-IDF et classifier
+- processing et réduciton du dictionnaire du tf-idf classifer : stop word NER PUNCT
+- analyse des mots correles
+- model (archi, entrainement, resultat)
+
+Cam
+- tokenization
+- entrainement
+- resultat
+
+COmparaison 
+- evaluation
+- inferenhce
+
+# rapport
